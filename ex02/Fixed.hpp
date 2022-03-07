@@ -12,21 +12,29 @@ class	Fixed {
 		Fixed	( void );
 		Fixed	( int const integer );
 		Fixed	( float const fl );
-		Fixed &	operator=( Fixed const & rhs );
-		Fixed	operator+( Fixed const & rhs );
-		Fixed	operator-( Fixed const & rhs );
-		Fixed	operator*( Fixed const & rhs );
-		Fixed	operator/( Fixed const & rhs );
-		Fixed 	operator++( int );
-		Fixed	operator++( void );
-		bool	operator<( Fixed const & rhs );
-		bool	operator>( Fixed const & rhs );
-		bool	operator>=( Fixed const & rhs );
-		bool	operator<=( Fixed const & rhs );
-		bool	operator==( Fixed const & rhs );
-		bool	operator!=( Fixed const & rhs );
 		Fixed	( Fixed const & src );
 		~Fixed	( void );
+
+		Fixed &	operator= ( Fixed const & rhs );
+		Fixed	operator+ ( Fixed const & rhs );
+		Fixed	operator- ( Fixed const & rhs );
+		Fixed	operator* ( Fixed const & rhs );
+		Fixed	operator/ ( Fixed const & rhs );
+		Fixed 	operator++ ( int );
+		Fixed	operator++ ( void );
+		Fixed 	operator-- ( int );
+		Fixed	operator-- ( void );
+		bool	operator< ( Fixed const & rhs );
+		bool	operator> ( Fixed const & rhs );
+		bool	operator>= ( Fixed const & rhs );
+		bool	operator<= ( Fixed const & rhs );
+		bool	operator== ( Fixed const & rhs );
+		bool	operator!= ( Fixed const & rhs );
+
+		static Fixed const &	min ( Fixed const & a, Fixed const & b );
+		static Fixed const &	max ( Fixed const & a, Fixed const & b );
+		static Fixed &			min ( Fixed & a, Fixed & b );
+		static Fixed &			max ( Fixed & a, Fixed & b );
 
 		int		getRawBits ( void ) const;
 		void	setRawBits ( int const raw );
